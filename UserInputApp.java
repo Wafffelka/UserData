@@ -40,8 +40,11 @@ public class UserInputApp {
                 } else {
                     System.out.println("Ошибка: Введенные данные уже существуют в файле.");
                 }
-            } catch (InvalidDataException | IOException e) {
+            } catch (InvalidDataException e) {
                 System.out.println("Ошибка: " + e.getMessage());
+            } catch (IOException e) {
+                System.out.println("Ошибка при чтении/записи файла:");
+                e.printStackTrace();
             }
         }
         scanner.close();
